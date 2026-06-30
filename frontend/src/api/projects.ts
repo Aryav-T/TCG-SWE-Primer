@@ -7,7 +7,7 @@ export type Project = {
 
 // GET /projects/:id - Get project by ID
 export const getProjectById = async (id: number): Promise<Project> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/${id}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project/${id}`);
     if (!response.ok) {
         throw new Error(`Failed to fetch project with ID ${id}`);
     }
@@ -17,7 +17,7 @@ export const getProjectById = async (id: number): Promise<Project> => {
 
 // GET /projects/all - Get all projects
 export const getAllProjects = async (): Promise<Project[]> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/all`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project/all`);
     if (!response.ok) {
         throw new Error("Failed to fetch all projects");
     }
@@ -27,7 +27,7 @@ export const getAllProjects = async (): Promise<Project[]> => {
 
 // GET /projects/manager/:manager_id - Get projects by manager ID
 export const getProjectsByManagerId = async (managerId: number): Promise<Project[]> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/manager/${managerId}`);
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project/manager/${managerId}`);
     if (!response.ok) {
         throw new Error(`Failed to fetch projects for manager ID ${managerId}`);
     }
@@ -37,7 +37,7 @@ export const getProjectsByManagerId = async (managerId: number): Promise<Project
 
 // POST /projects - Create a new project
 export const createProject = async (project: Omit<Project, "id">): Promise<Project> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ export const createProject = async (project: Omit<Project, "id">): Promise<Proje
 
 // PUT /projects/:id - Update a project by ID
 export const updateProjectById = async (id: number, project: Partial<Omit<Project, "id">>): Promise<Project> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project/${id}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
@@ -69,7 +69,7 @@ export const updateProjectById = async (id: number, project: Partial<Omit<Projec
 
 // DELETE /projects/:id - Delete a project by ID
 export const deleteProjectById = async (id: number): Promise<void> => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/projects/${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BACKEND_URL}/project/${id}`, {
         method: "DELETE",
     });
     if (!response.ok) {
