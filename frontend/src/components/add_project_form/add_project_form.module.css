@@ -1,1 +1,60 @@
-/* TODO: implement in part 2.3 */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    max-width: 420px;
+}
+
+.label {
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: #334155;
+}
+
+.input {
+    padding: 0.5rem 0.65rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 0.875rem;
+
+}
+
+.input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+textarea.input {
+    min-height: 80px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.button {
+    width: fit-content;
+    padding: 0.55rem 1.1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #f1f5f9;
+}
+
+.button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.error {
+    color: #dc2626;
+    font-size: 0.85rem;
+}
+
+
