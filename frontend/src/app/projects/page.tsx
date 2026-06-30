@@ -28,8 +28,8 @@ export default function ProjectsPage() {
         <section className={styles.card}>
           {/* comment these in as you implement them based on the ReadME */}
           {/* <AddProjectForm onProjectAdded={() => setProjectRefreshKey((previous) => previous + 1)} />
-          <AssignUserToProjectForm onAssignmentAdded={() => setProjectRefreshKey((previous) => previous + 1)} />
-          <ProjectDisplay refreshTrigger={projectRefreshKey} /> */}
+          <AssignUserToProjectForm onAssignmentAdded={() => setProjectRefreshKey((previous) => previous + 1)} />*/
+          <ProjectDisplay refreshTrigger={projectRefreshKey} /> }
         </section>
       </main>
     </div>
