@@ -49,7 +49,7 @@ export const createProject = async (req: Request, res: Response) => {
     const { project_name, project_manager_id, project_description } = req.body;
     const manager = await checkUserExists(project_manager_id);
     if (!manager) {
-        return res.status(400).json({ error: "Manager ID does not exist" });
+        return res.status(404).json({ error: "Manager ID does not exist" });
     }
     if (!project_name || !project_manager_id) {
         return res.status(400).json({ error: "Missing fields" });
